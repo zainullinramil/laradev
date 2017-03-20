@@ -13,23 +13,19 @@
 
 use App\Task;
 
-Route::get('/', function () {
-    $name = 'Ramil';
+Route::get('/', 'PostsController@index');
+Route::get('/posts/create', 'PostsController@create');
 
-    return view('welcome', compact('name'));
-});
+Route::post('posts', 'PostsController@store');
 
-Route::get('tasks', function (){
-    $tasks = DB::table('tasks')->get();
-    return view('tasks.index', compact('tasks'));
-});
+//Route::get('/', function () {
+//    $name = 'Ramil';
+//
+//    return view('welcome', compact('name'));
+//});
 
-Route::get('tasks/{task}', function ($id) {
-//    $task = DB::table('tasks')->find($id);
-    $task = Task::find($id);
-//    return $tasks;
-    return view('tasks.show', compact('task'));
-});
+Route::get('/tasks', 'TasksController@index');
+Route::get('/tasks/{task}', 'TasksController@show');
 
 Route::get('about', function () {
     return view('about');
