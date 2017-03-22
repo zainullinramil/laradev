@@ -11,3 +11,4 @@ Homestead.yaml
 .env
 /.vagrant
 /puphpet/files/dot/ssh
+/puphpet/files/dot/ssh/

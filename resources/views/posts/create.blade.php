@@ -4,7 +4,7 @@
 
     <div class="col-sm-8 blog-main">
 
-    <h1>Publish a Post</h1>
+        <h1>Publish a Post</h1>
         <hr>
 
         <form method="POST" action="/posts">
@@ -19,9 +19,14 @@
                 <label for="exampleInputPassword1">Body</label>
                 <textarea name="body" id="body" cols="30" rows="5" class="form-control"></textarea>
             </div>
+            <div class="form-group">
 
-            <button type="submit" class="btn btn-default">Publish</button>
+                <button type="submit" class="btn btn-default">Publish</button>
+            </div>
+
+            @include('layouts.errors')
         </form>
+
 
     </div>
 @endsection
