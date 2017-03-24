@@ -32,12 +32,15 @@
 
                     {{--                    {{method_field('PATCH')}}--}}
                     <div class="form-group">
-                        <textarea name="body" placeholder="Your comment here." class="form-control"></textarea>
+                        <textarea name="body" placeholder="Your comment here." class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Add comment</button>
                     </div>
                 </form>
+
+                @include('layouts.errors')
+
             </div>
         </div>
     </div>
