@@ -35,3 +35,7 @@ Route::post('/posts/{post}/comments', 'CommentsController@store');
 //Route::get('about', function () {
 //    return view('about');
 //});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

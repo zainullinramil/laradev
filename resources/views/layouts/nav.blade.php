@@ -5,7 +5,7 @@
             <a class="nav-link" href="/posts/create">New features</a>
             <a class="nav-link" href="#">Press</a>
             <a class="nav-link" href="#">New hires</a>
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="/login">Login</a>
         </nav>
     </div>
 </div>
