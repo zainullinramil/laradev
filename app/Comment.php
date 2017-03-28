@@ -13,4 +13,10 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function addComment(Comment $comment){
+
+        $this->comments()->save($comment);
+
+    }
 }

@@ -6,7 +6,7 @@
         <h2 class="blog-post-title">
             <a href="/posts/{{$post->id}}">{{$post->title}}</a>
         </h2>
-        <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}}</p>
+        <p class="blog-post-meta">{{$post->user->name}} on {{$post->created_at->toFormattedDateString()}}</p>
         {{$post->body}}
 
         <hr>
@@ -15,7 +15,7 @@
             <ul class="list-group">
                 @foreach($post->comments as $comment)
                     <li class="list-group-item">
-                        <strong>{{$comment->created_at->diffForHumans()}}: &nbsp; </strong>
+                        <strong>{{$comment->user->name}} on {{$comment->created_at->diffForHumans()}}: &nbsp; </strong>
                         <br>
                         {{$comment->body}}
                     </li>

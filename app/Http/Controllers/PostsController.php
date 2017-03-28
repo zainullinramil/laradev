@@ -7,6 +7,11 @@ use App\Post;
 
 class PostsController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index(){
 
         $posts = Post::latest()->get();
@@ -27,18 +32,24 @@ class PostsController extends Controller
 
     protected function store()
     {
-        //Валидация полей
+        //Валидация полейr
         $this->validate(request(),[
             'title' => 'required',
             'body' => 'required'
         ]);
 
-
+        auth()->user()->publish(new Post(request(['title', 'body'])));
         //Создание нвоого поста
 
-        Post::create(request(['title', 'body']));
+//        Post::create([
+//            'title' => request('title'),
+//            'body' => request('body'),
+//            'user_id' => auth()->id()
+//
+//        ]);
 
-        //редирект на главную21
+
+        //редирект на главную
         return redirect('/');
     }
 }
